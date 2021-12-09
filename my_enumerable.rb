@@ -10,4 +10,10 @@ module MyEnumerable
     each { |elem| result = true if yield(elem) }
     result
   end
+
+  def filter
+    result = []
+    each { |elem| result.push(elem) if yield(elem) }
+    result
+  end
 end
